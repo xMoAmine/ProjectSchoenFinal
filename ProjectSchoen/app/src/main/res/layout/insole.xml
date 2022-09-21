@@ -18,27 +18,50 @@
 
 
     <ImageView
+        android:id="@+id/insole_region_1"
         android:layout_width="150dp"
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_region_1" />
 
     <ImageView
+        android:id="@+id/insole_region_2"
         android:layout_width="150dp"
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_region_2" />
 
 
     <ImageView
+        android:id="@+id/insole_region_3"
         android:layout_width="150dp"
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_region_3" />
 
+    <ImageView
+        android:id="@+id/insole_region_4"
+        android:layout_width="150dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_region_4" />
+
+    <ImageView
+        android:id="@+id/insole_region_5"
+        android:layout_width="150dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_region_5" />
 
     <ImageView
         android:id="@+id/insole_region_6"
@@ -47,7 +70,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_region_6" />
+        app:srcCompat="@drawable/ic_region_6"/>
+
 
     <ImageView
         android:id="@+id/insole_region_7"
@@ -57,53 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_region_7" />
-
-
-    <ImageView
-        android:id="@+id/insole_region_12"
-        android:layout_width="150dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_region_12" />
-
-    <ImageView
-        android:id="@+id/insole_region_13"
-        android:layout_width="150dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_region_13" />
-
-    <ImageView
-        android:id="@+id/insole_region_14"
-        android:layout_width="150dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_region_14" />
-
-    <ImageView
-        android:id="@+id/insole_region_15"
-        android:layout_width="150dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_region_15"/>
-
-
-    <ImageView
-        android:id="@+id/insole_region_19"
-        android:layout_width="150dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_region_19" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

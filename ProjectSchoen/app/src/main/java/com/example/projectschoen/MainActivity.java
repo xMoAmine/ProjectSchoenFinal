@@ -1,3 +1,6 @@
+//@author: Mohamed Amine Sahla
+//Applicatie voor Project Schoen(Project TI)
+
 package com.example.projectschoen;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,10 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.insole_region_1) ImageView mInsoleRegion1;
     @BindView(R.id.insole_region_2) ImageView mInsoleRegion2;
     @BindView(R.id.insole_region_3) ImageView mInsoleRegion3;
-    @BindView(R.id.insole_region_4) ImageView mInsoleRegion4;
-    @BindView(R.id.insole_region_5) ImageView mInsoleRegion5;
-    @BindView(R.id.insole_region_6) ImageView mInsoleRegion6;
-    @BindView(R.id.insole_region_7) ImageView mInsoleRegion7;
+
 
 
     @Override
@@ -36,13 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         mViewModel.getInsoleColor().observe(this, color -> {
 
-            DrawableCompat.setTint(mInsoleRegion1.getDrawable(), Color.parseColor(color[1]));
-            DrawableCompat.setTint(mInsoleRegion2.getDrawable(), Color.parseColor(color[2]));
-            DrawableCompat.setTint(mInsoleRegion3.getDrawable(), Color.parseColor(color[3]));
-            DrawableCompat.setTint(mInsoleRegion4.getDrawable(), Color.parseColor(color[4]));
-            DrawableCompat.setTint(mInsoleRegion5.getDrawable(), Color.parseColor(color[5]));
-            DrawableCompat.setTint(mInsoleRegion6.getDrawable(), Color.parseColor(color[6]));
-            DrawableCompat.setTint(mInsoleRegion7.getDrawable(), Color.parseColor(color[7]));
+            DrawableCompat.setTint(mInsoleRegion1.getDrawable(), Color.parseColor(color[3]));
+            DrawableCompat.setTint(mInsoleRegion2.getDrawable(), Color.parseColor(color[4]));
+            DrawableCompat.setTint(mInsoleRegion3.getDrawable(), Color.parseColor(color[6]));
 
 
         });

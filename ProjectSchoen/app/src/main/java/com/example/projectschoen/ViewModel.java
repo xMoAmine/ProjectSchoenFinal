@@ -1,3 +1,6 @@
+//@author: Mohamed Amine Sahla
+//Applicatie voor Project Schoen(Project TI)
+
 package com.example.projectschoen;
 
 import android.app.Application;
@@ -16,6 +19,7 @@ public class ViewModel extends AndroidViewModel {
         return mInsoleColor;
     }
 
+    // View model of our application, which goes back and forth based on the value it receives.
     public ViewModel(@NonNull Application application) {
         super(application);
 
@@ -23,7 +27,9 @@ public class ViewModel extends AndroidViewModel {
         onInsoleValueReceived(value);
     }
 
-
+    //Heatmap of sorts; made a for loop which transitions between certain colors once we link them to
+    //                  the output we get from our sensors. This will make low pressure showcase as
+    //                  light yellow while heavy pressure would be red.
     private void onInsoleValueReceived(Integer[] value) {
 
         HashMap<Integer, String> colourMap = new HashMap<>();

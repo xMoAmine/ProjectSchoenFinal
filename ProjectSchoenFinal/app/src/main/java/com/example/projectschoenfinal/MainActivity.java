@@ -1,5 +1,6 @@
 //@author: Mohamed Amine Sahla
 //Applicatie voor Project Schoen(Project TI)
+//Inspiration done from: Android Studio Documentation, Sample Android Studio Application and FBLE Github
 
 package com.example.projectschoenfinal;
 

@@ -44,21 +44,19 @@ public class BleManager {
     private MultipleBluetoothController multipleBluetoothController;
     private BluetoothManager bluetoothManager;
 
-    public static final int DEFAULT_SCAN_TIME = 10000;
-    private static final int DEFAULT_MAX_MULTIPLE_DEVICE = 7;
-    private static final int DEFAULT_OPERATE_TIME = 5000;
+    public static final int DEFAULT_SCAN_TIME = 5000;
+    private static final int DEFAULT_MAX_MULTIPLE_DEVICE = 3;
+    private static final int DEFAULT_OPERATE_TIME = 2500;
     private static final int DEFAULT_CONNECT_RETRY_COUNT = 0;
-    private static final int DEFAULT_CONNECT_RETRY_INTERVAL = 5000;
+    private static final int DEFAULT_CONNECT_RETRY_INTERVAL = 2500;
     private static final int DEFAULT_MTU = 23;
     private static final int DEFAULT_MAX_MTU = 512;
-    private static final int DEFAULT_WRITE_DATA_SPLIT_COUNT = 20;
-    private static final int DEFAULT_CONNECT_OVER_TIME = 10000;
+    private static final int DEFAULT_CONNECT_OVER_TIME = 5000;
 
     private int maxConnectCount = DEFAULT_MAX_MULTIPLE_DEVICE;
     private int operateTimeout = DEFAULT_OPERATE_TIME;
     private int reConnectCount = DEFAULT_CONNECT_RETRY_COUNT;
     private long reConnectInterval = DEFAULT_CONNECT_RETRY_INTERVAL;
-    private int splitWriteNum = DEFAULT_WRITE_DATA_SPLIT_COUNT;
     private long connectOverTime = DEFAULT_CONNECT_OVER_TIME;
 
     public static BleManager getInstance() {
@@ -285,11 +283,11 @@ public class BleManager {
      */
     public void scan(BleScanCallback callback) {
         if (callback == null) {
-            throw new IllegalArgumentException("BleScanCallback can not be Null!");
+            throw new IllegalArgumentException("BleScanCallback cannot be Null!");
         }
 
         if (!isBlueEnable()) {
-            BleLog.e("Bluetooth not enable!");
+            BleLog.e("Bluetooth not enabled!");
             callback.onScanStarted(false);
             return;
         }
@@ -310,11 +308,11 @@ public class BleManager {
      */
     public void scanAndConnect(BleScanAndConnectCallback callback) {
         if (callback == null) {
-            throw new IllegalArgumentException("BleScanAndConnectCallback can not be Null!");
+            throw new IllegalArgumentException("BleScanAndConnectCallback cannot be Null!");
         }
 
         if (!isBlueEnable()) {
-            BleLog.e("Bluetooth not enable!");
+            BleLog.e("Bluetooth not enabled!");
             callback.onScanStarted(false);
             return;
         }
@@ -337,12 +335,12 @@ public class BleManager {
      */
     public BluetoothGatt connect(BleDevice bleDevice, BleGattCallback bleGattCallback) {
         if (bleGattCallback == null) {
-            throw new IllegalArgumentException("BleGattCallback can not be Null!");
+            throw new IllegalArgumentException("BleGattCallback cannot be Null!");
         }
 
         if (!isBlueEnable()) {
-            BleLog.e("Bluetooth not enable!");
-            bleGattCallback.onConnectFail(bleDevice, new OtherException("Bluetooth not enable!"));
+            BleLog.e("Bluetooth not enabled!");
+            bleGattCallback.onConnectFail(bleDevice, new OtherException("Bluetooth not enabled!"));
             return null;
         }
 
@@ -417,7 +415,7 @@ public class BleManager {
 
         BleBluetooth bleBluetooth = multipleBluetoothController.getBleBluetooth(bleDevice);
         if (bleBluetooth == null) {
-            callback.onNotifyFailure(new OtherException("This device not connect!"));
+            callback.onNotifyFailure(new OtherException("This device is not connected!"));
         } else {
             bleBluetooth.newBleConnector()
                     .withUUIDString(uuid_service, uuid_notify)
@@ -522,18 +520,18 @@ public class BleManager {
                        int mtu,
                        BleMtuChangedCallback callback) {
         if (callback == null) {
-            throw new IllegalArgumentException("BleMtuChangedCallback can not be Null!");
+            throw new IllegalArgumentException("BleMtuChangedCallback cannot be Null!");
         }
 
         if (mtu > DEFAULT_MAX_MTU) {
             BleLog.e("requiredMtu should lower than 512 !");
-            callback.onSetMTUFailure(new OtherException("requiredMtu should lower than 512 !"));
+            callback.onSetMTUFailure(new OtherException("requiredMtu should be lower than 512 !"));
             return;
         }
 
         if (mtu < DEFAULT_MTU) {
             BleLog.e("requiredMtu should higher than 23 !");
-            callback.onSetMTUFailure(new OtherException("requiredMtu should higher than 23 !"));
+            callback.onSetMTUFailure(new OtherException("requiredMtu should be higher than 23 !"));
             return;
         }
 
@@ -613,7 +611,7 @@ public class BleManager {
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public BleDevice convertBleDevice(ScanResult scanResult) {
         if (scanResult == null) {
-            throw new IllegalArgumentException("scanResult can not be Null!");
+            throw new IllegalArgumentException("scanResult cannot be Null!");
         }
         BluetoothDevice bluetoothDevice = scanResult.getDevice();
         int rssi = scanResult.getRssi();

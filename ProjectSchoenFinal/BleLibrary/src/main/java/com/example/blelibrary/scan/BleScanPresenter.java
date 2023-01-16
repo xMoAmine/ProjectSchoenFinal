@@ -145,7 +145,8 @@ public abstract class BleScanPresenter implements BluetoothAdapter.LeScanCallbac
                     + "  name:" + bleDevice.getName()
                     + "  mac:" + bleDevice.getMac()
                     + "  Rssi:" + bleDevice.getRssi()
-                    + "  scanRecord:" + HexUtil.formatHexString(bleDevice.getScanRecord()));
+                    + "  scanRecord:" + HexUtil.formatDecimalString(bleDevice.getScanRecord(), true));
+
 
             mBleDeviceList.add(bleDevice);
             mMainHandler.post(new Runnable() {
@@ -167,7 +168,7 @@ public abstract class BleScanPresenter implements BluetoothAdapter.LeScanCallbac
                         + "  name: " + bleDevice.getName()
                         + "  mac: " + bleDevice.getMac()
                         + "  Rssi: " + bleDevice.getRssi()
-                        + "  scanRecord: " + HexUtil.formatHexString(bleDevice.getScanRecord(), true));
+                        + "  scanRecord: " + HexUtil.formatDecimalString(bleDevice.getScanRecord(), true));
 
                 mBleDeviceList.add(bleDevice);
                 mMainHandler.post(new Runnable() {

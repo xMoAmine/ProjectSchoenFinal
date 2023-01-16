@@ -91,7 +91,7 @@ public class CharacteristicOperationFragment extends Fragment {
                                             runOnUiThread(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                    addText(txt, HexUtil.formatHexString(data, true));
+                                                    addText(txt, HexUtil.formatDecimalString(data, true));
                                                 }
                                             });
                                         }
@@ -153,7 +153,7 @@ public class CharacteristicOperationFragment extends Fragment {
                                                 runOnUiThread(new Runnable() {
                                                     @Override
                                                     public void run() {
-                                                        addText(txt, HexUtil.formatHexString(characteristic.getValue(), true));
+                                                        addText(txt, HexUtil.formatDecimalString(characteristic.getValue(), true));
                                                     }
                                                 });
                                             }

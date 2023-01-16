@@ -219,29 +219,6 @@ public class BleManager {
         return this;
     }
 
-
-    /**
-     * Get operate split Write Num
-     *
-     * @return
-     */
-    public int getSplitWriteNum() {
-        return splitWriteNum;
-    }
-
-    /**
-     * Set split Writ eNum
-     *
-     * @param num
-     * @return BleManager
-     */
-    public BleManager setSplitWriteNum(int num) {
-        if (num > 0) {
-            this.splitWriteNum = num;
-        }
-        return this;
-    }
-
     /**
      * Get operate connect Over Time
      *
